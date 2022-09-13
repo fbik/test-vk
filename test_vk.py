@@ -18,3 +18,21 @@ minus_parameters = [
 def test_int2_minus(a, b, expected):
     s = a - b
     assert s == expected
+
+
+def test_set1():
+    s = {"one", "two"}
+
+    assert len(s) == 2
+
+
+set_parameters = [
+    ({"one", "three"}, {"two"}, {"one", "two", "three"}),
+]
+
+
+@pytest.mark.parametrize("a,b,expected", set_parameters)
+def test_set2(a, b, expected):
+    z = a.union(b)
+
+    assert z == expected
