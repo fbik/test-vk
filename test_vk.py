@@ -36,3 +36,21 @@ def test_set2(a, b, expected):
     z = a.union(b)
 
     assert z == expected
+
+def test_str1():
+    u = "one".upper()
+
+    assert u == "ONE"
+
+
+str_parameters = [
+    ("tWo", "two"),
+    ("swFF", "swff")
+]
+
+
+@pytest.mark.parametrize("a,expected", str_parameters)
+def test_str2(a, expected):
+    z = a.lower()
+
+    assert z == expected
